@@ -1,0 +1,54 @@
+.about_us {
+    padding-top: 30px;
+    margin-bottom: 88px;
+
+    @include mediaTablet {
+        margin-bottom: 60px;
+    }
+
+    @include mediaMobile {
+        margin-bottom: 40px;
+    }
+
+    @include mediaMobileM {
+        margin-bottom: 30px;
+    }
+}
+
+.about_us__title {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.about_us__text {
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.about_us__subtitle {
+    margin-bottom: 20px;
+}
+
+.about_us__list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.about_us__list-item {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.about_us__list-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background-color: #D4C17F;
+    border-radius: 50%;
+
+}

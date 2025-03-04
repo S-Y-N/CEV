@@ -1,0 +1,67 @@
+@import './fonts';
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: $font-main;
+    background-color: $dark;
+    color: $white;
+    font-size: 16px;
+}
+
+.main {
+    flex: 1;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1140px;
+}
+
+.none {
+    display: none !important;
+}
+
+.title {
+    font-size: 42px;
+    font-family: $font-accent;
+    font-weight: 700;
+    color: $accent;
+
+    @include mediaTablet {
+        font-size: 28px;
+    }
+}
+
+.subtitle {
+    font-size: 28px;
+    font-family: $font-accent;
+    font-weight: 700;
+    color: $accent;
+
+    @include mediaTablet {
+        font-size: 20px;
+    }
+}
+
+.link-email {
+    color: $accent !important;
+    font-weight: 700;
+}
+
+.no-scroll {
+    overflow-y: hidden;
+}

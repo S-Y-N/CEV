@@ -1,0 +1,35 @@
+.services {
+    position: relative;
+
+    &::after {
+        content: "III";
+
+        right: calc(50% + 555px);
+        transform: translate(50%, 0%);
+
+        @include decoration;
+    }
+}
+
+.services__title {
+    text-align: center;
+    margin-bottom: 88px;
+
+    @include mediaTablet {
+        margin-bottom: 44px;
+    }
+
+    @include mediaMobile {
+        margin-bottom: 36px;
+    }
+}
+
+.services__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+
+    @include mediaTablet {
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    }
+}

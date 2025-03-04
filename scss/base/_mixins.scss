@@ -1,0 +1,47 @@
+@mixin decoration {
+    position: absolute;
+    top: 0;
+    line-height: 1.15;
+    opacity: 0.02;
+
+    font-size: 400px;
+    font-family: $font-accent;
+    color: $accent-hover;
+}
+
+@mixin mediaTablet {
+    @media screen and (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin mediaTabletM {
+    @media screen and (max-width: $tablet_m) {
+        @content;
+    }
+}
+
+@mixin mediaMobile {
+    @media screen and (max-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin mediaMobileL {
+    @media screen and (max-width: $mobile_l) {
+        @content;
+    }
+}
+
+
+@mixin mediaMobileM {
+    @media screen and (max-width: $mobile_m) {
+        @content;
+    }
+}
+
+@mixin mediaMobileS {
+    @media screen and (max-width: $mobile_s) {
+        @content;
+    }
+}
