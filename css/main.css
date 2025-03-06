@@ -539,13 +539,6 @@ body {
     gap: 30px;
   }
 }
-@media screen and (max-width: 480px) {
-  .benefits_content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-}
 
 .benefits__title {
   margin-bottom: 88px;
