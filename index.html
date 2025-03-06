@@ -166,8 +166,12 @@
 
                         <button type="submit" class="form__btn">Залишити заявку</button>
                     </form>
-                    <p id="success-message" style="display: none; color: green;">Заявка успішно відправлена!</p>
-
+                    <div id="success-modal" class="modal" style="display: none;">
+                        <div class="modal-content">
+                            <p>Заявка успішно відправлена!</p>
+                            <button id="close-modal">X</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

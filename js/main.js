@@ -30,29 +30,24 @@ $('[data-tel-input]').each(function () {
 
 // document.getElementById("google-form").addEventListener("submit", function (e) {
 //     e.preventDefault();
-
 //     const formData = new FormData(this);
-
-//     // Вставте сюди посилання на вашу Google Form
 //     const googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLSevD-jNWwocaQN2zvhpsily2zl8vPUmDArK2CGfH6HvjuwtCg/formResponse";
 
 //     const data = new URLSearchParams();
 //     data.append("entry.787026427", formData.get("name"));
 //     data.append("entry.592571686", formData.get("phone"));
-//     console.log(data);
+
 //     fetch(googleFormURL, {
 //         method: "POST",
 //         mode: "no-cors",
 //         body: data,
 //     }).then(() => {
-//         alert("Заявка успішно відправлена!");
+//         document.getElementById("success-message").style.display = "block";
 //         this.reset();
 //     }).catch(error => {
 //         console.error("Помилка відправки:", error);
-//         alert("Помилка при відправці форми!");
 //     });
 // });
-
 document.getElementById("google-form").addEventListener("submit", function (e) {
     e.preventDefault();
     const formData = new FormData(this);
@@ -67,9 +62,24 @@ document.getElementById("google-form").addEventListener("submit", function (e) {
         mode: "no-cors",
         body: data,
     }).then(() => {
-        document.getElementById("success-message").style.display = "block";
+        document.getElementById("success-modal").style.display = "flex"; // Відкриваємо модальне вікно
         this.reset();
     }).catch(error => {
         console.error("Помилка відправки:", error);
     });
 });
+
+// Закриття модального вікна при натисканні на кнопку
+document.getElementById("close-modal").addEventListener("click", function () {
+    document.getElementById("success-modal").style.display = "none";
+});
+
+// Закриття при кліку поза вікном
+window.addEventListener("click", function (event) {
+    const modal = document.getElementById("success-modal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
+
+
