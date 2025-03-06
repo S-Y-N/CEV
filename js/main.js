@@ -28,27 +28,48 @@ $('[data-tel-input]').each(function () {
     });
 });
 
+// document.getElementById("google-form").addEventListener("submit", function (e) {
+//     e.preventDefault();
+
+//     const formData = new FormData(this);
+
+//     // Вставте сюди посилання на вашу Google Form
+//     const googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLSevD-jNWwocaQN2zvhpsily2zl8vPUmDArK2CGfH6HvjuwtCg/formResponse";
+
+//     const data = new URLSearchParams();
+//     data.append("entry.787026427", formData.get("name"));
+//     data.append("entry.592571686", formData.get("phone"));
+//     console.log(data);
+//     fetch(googleFormURL, {
+//         method: "POST",
+//         mode: "no-cors",
+//         body: data,
+//     }).then(() => {
+//         alert("Заявка успішно відправлена!");
+//         this.reset();
+//     }).catch(error => {
+//         console.error("Помилка відправки:", error);
+//         alert("Помилка при відправці форми!");
+//     });
+// });
+
 document.getElementById("google-form").addEventListener("submit", function (e) {
     e.preventDefault();
-
     const formData = new FormData(this);
-
-    // Вставте сюди посилання на вашу Google Form
     const googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLSevD-jNWwocaQN2zvhpsily2zl8vPUmDArK2CGfH6HvjuwtCg/formResponse";
 
     const data = new URLSearchParams();
     data.append("entry.787026427", formData.get("name"));
     data.append("entry.592571686", formData.get("phone"));
-    console.log(data);
+
     fetch(googleFormURL, {
         method: "POST",
         mode: "no-cors",
         body: data,
     }).then(() => {
-        alert("Заявка успішно відправлена!");
+        document.getElementById("success-message").style.display = "block";
         this.reset();
     }).catch(error => {
         console.error("Помилка відправки:", error);
-        alert("Помилка при відправці форми!");
     });
 });
