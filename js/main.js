@@ -9,6 +9,12 @@ $(document).ready(function () {
         nav.toggleClass('header__top-content--mobile');
         $('body').toggleClass('no-scroll');
     });
+
+    $('.nav__list-link.contact').click(function () {
+        navIcon.removeClass('nav-icon--active');
+        nav.removeClass('header__top-content--mobile');
+        $('body').removeClass('no-scroll');
+    });
 });
 
 /*Phone`s Mask */
